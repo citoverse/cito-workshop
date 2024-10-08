@@ -32,5 +32,6 @@ mean(1*(apply(predictions, 1, which.max) == (labels+1)))
 transfer_architecture <- create_architecture(transfer("resnet18"))
 resnet <- cnn(train, labels+1, transfer_architecture, loss = "softmax",
               epochs = 2L, validation = 0.1, lr = 0.05)
-
+predictions = predict(cnn.fit, type = "response")
+mean(1*(apply(predictions, 1, which.max) == (labels+1)))
 
