@@ -35,3 +35,8 @@ devtools::install_github(repo = "TheoreticalEcology/EcoData", dependencies = F, 
 ```
 03_CNN.R
 ```
+
+Trouble shooting for the flower dataset:
+
+Sometimes `EcoData::dataset_flower()` cannot download the data automatically (depends on the OS and security settings). The dataset can also be downloaded manually from  https://www.dropbox.com/s/slgml71w22of4n4/flower.rda?raw=1 
+
