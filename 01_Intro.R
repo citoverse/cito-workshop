@@ -5,6 +5,7 @@
 # devtools::install_github(repo = "TheoreticalEcology/EcoData", dependencies = F, build_vignettes = F)
 library(EcoData)
 library(cito)
+library(ggplot2)
 set.seed(42)
 
 
@@ -14,11 +15,15 @@ predictions = predict(nn.fit)
 plot(iris$Sepal.Width, predictions)
 abline(c(0, 1))
 
+# Classification - binary or multiclass
 nn.fit = dnn(Species~Sepal.Width+Petal.Length, data = iris, loss = "softmax") # multi-class (more than 2 levels in the response)
+predict(nn.fit) # predict on the scale of the link
+predict(nn.fit, type = "response") # predict on the scale of the response
+
 pred = predict(nn.fit, type = "response") # probabilities that sum up to 1 over the rows
 mean(1*(apply(pred, 1, which.max) == as.integer(iris$Species)))
 
-?dnn
+
 
 
 # SDM - Predicting Elephant occurrences
@@ -99,12 +104,7 @@ nn.fit = dnn(Presence~.,
              validation = 0.2,
              dropout = tune(lower = 0.0, upper = 0.3),
              tuning = config_tuning(CV = 2L, cancel = FALSE) # 2-folded cross validation
-             )
-
-
-
-
-
+)
 
 
 

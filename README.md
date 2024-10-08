@@ -40,3 +40,13 @@ Trouble shooting for the flower dataset:
 
 Sometimes `EcoData::dataset_flower()` cannot download the data automatically (depends on the OS and security settings). The dataset can also be downloaded manually from  https://www.dropbox.com/s/slgml71w22of4n4/flower.rda?raw=1 
 
+
+## 4 - Bonus
+
+- Embeddings
+- Likelihoods and residual checks
+
+```
+03_Embeddings.R
+```
+
