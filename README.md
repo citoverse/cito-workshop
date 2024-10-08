@@ -47,6 +47,12 @@ Sometimes `EcoData::dataset_flower()` cannot download the data automatically (de
 - Likelihoods and residual checks
 
 ```
-03_Embeddings.R
+04_Embeddings.R
+```
+
+- Multi-Species SDM
+
+```
+05_MultiSpecies.R
 ```
 
